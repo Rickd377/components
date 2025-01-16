@@ -1,0 +1,113 @@
+.flipping-card-body {
+  @include flex;
+
+  .card {
+    aspect-ratio: 1.59 / 1;
+    height: 20rem;
+    margin: 5rem;
+    position: relative;
+    perspective: 1000px;
+
+    &.flipped {
+      .front {
+        transform: rotateY(-180deg);
+      }
+      .back {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+
+  .front,
+  .back {
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 3px 5px 10px rgba($black, .1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .8s ease;
+    background-color: #eee;
+    transform-style: preserve-3d;
+  }
+
+  .front {
+    @include flex(space-between, start, column);
+
+    &-top {
+      @include flex(space-between);
+      width: 100%;
+
+      .logo {
+        @include flex;
+
+        .title {
+          margin-left: 10px;
+          font-size: 1.4rem;
+        }
+
+        .circle {
+          height: 40px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          background: gray;
+
+          &.red {
+            background: rgba($red, .9);
+          }
+
+          &.orange {
+            background: rgba($orange, .8);
+            margin-left: -15px;
+          }
+        }
+      }
+    }
+
+    .card-number-wrapper {
+      @include flex(start, start, column);
+      gap: .3rem;
+
+      .card-label {
+        font-size: .9rem;
+      }
+
+      .card-number {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-bottom {
+      @include flex(space-between);
+      width: 100%;
+
+      .name {
+        font-size: 1.4rem;
+      }
+
+      .valid {
+        @include flex(center, center, column);
+        gap: .3rem;
+
+        &-label {
+          font-size: .9rem;
+        }
+
+        &-date {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .chip-image {
+      width: 70px;
+    }
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+}

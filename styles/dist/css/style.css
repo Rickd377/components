@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  min-height: 100dvh;
+  background-color: #f8f8f8;
+  font-family: "Poppins", sans-serif;
+  color: #121725;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.home-body .container {
+  padding: 1rem;
+  background-color: #e6e6e6;
+  border-radius: 1.6rem;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.home-body .container .link {
+  font-size: 1.3rem;
+  background-color: #b3ccff;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  transition: background-color 0.5s;
+  text-align: center;
+}
+.home-body .container .link:hover {
+  background-color: #99bbff;
+}
+
+.profile-card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.profile-card-body .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(#3f72ec 35%, white 35%);
+  width: 450px;
+  border-radius: 2rem;
+  padding: 3rem;
+  gap: 2rem;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.profile-card-body .card .image {
+  width: 50%;
+  border-radius: 50%;
+  border: 4px solid white;
+  outline: 4px solid #3f72ec;
+}
+.profile-card-body .card .user-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.profile-card-body .card .user-wrapper .name {
+  font-size: 1.5rem;
+}
+.profile-card-body .card .user-wrapper .occupation {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+.profile-card-body .card .socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.profile-card-body .card .socials .icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 45px;
+  aspect-ratio: 1;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+.profile-card-body .card .socials .icon-wrapper:has(.facebook-icon) {
+  background-color: #3e68af;
+}
+.profile-card-body .card .socials .icon-wrapper:has(.twitter-icon) {
+  background-color: #18a0e7;
+}
+.profile-card-body .card .socials .icon-wrapper:has(.instagram-icon) {
+  background: linear-gradient(to top right, #ffc544, #ff6607, #ff433f, #c828b7, #952ec5, #573ad3, #2140df);
+}
+.profile-card-body .card .socials .icon-wrapper:has(.youtube-icon) {
+  background-color: #ff0000;
+}
+.profile-card-body .card .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.profile-card-body .card .buttons button {
+  padding-block: 0.5rem;
+  width: 125px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background-color: #3f72ec;
+  color: white;
+  border-radius: 99rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.profile-card-body .card .interactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 266px;
+  height: 20px;
+}
+.profile-card-body .card .interactions .divider {
+  height: 100%;
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.profile-card-body .card .interactions .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.flipping-card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.flipping-card-body .card {
+  aspect-ratio: 1.59/1;
+  height: 20rem;
+  margin: 5rem;
+  position: relative;
+  perspective: 1000px;
+}
+.flipping-card-body .card.flipped .front {
+  transform: rotateY(-180deg);
+}
+.flipping-card-body .card.flipped .back {
+  transform: rotateY(0deg);
+}
+.flipping-card-body .front,
+.flipping-card-body .back {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: 0.8s ease;
+  background-color: #eee;
+  transform-style: preserve-3d;
+}
+.flipping-card-body .front {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+}
+.flipping-card-body .front-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.flipping-card-body .front-top .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.flipping-card-body .front-top .logo .title {
+  margin-left: 10px;
+  font-size: 1.4rem;
+}
+.flipping-card-body .front-top .logo .circle {
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: gray;
+}
+.flipping-card-body .front-top .logo .circle.red {
+  background: rgba(255, 0, 0, 0.9);
+}
+.flipping-card-body .front-top .logo .circle.orange {
+  background: rgba(255, 165, 0, 0.8);
+  margin-left: -15px;
+}
+.flipping-card-body .front .card-number-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.flipping-card-body .front .card-number-wrapper .card-label {
+  font-size: 0.9rem;
+}
+.flipping-card-body .front .card-number-wrapper .card-number {
+  font-size: 1.4rem;
+}
+.flipping-card-body .front-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.flipping-card-body .front-bottom .name {
+  font-size: 1.4rem;
+}
+.flipping-card-body .front-bottom .valid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.flipping-card-body .front-bottom .valid-label {
+  font-size: 0.9rem;
+}
+.flipping-card-body .front-bottom .valid-date {
+  font-size: 1.1rem;
+}
+.flipping-card-body .front .chip-image {
+  width: 70px;
+}
+.flipping-card-body .back {
+  transform: rotateY(180deg);
+}/*# sourceMappingURL=style.css.map */

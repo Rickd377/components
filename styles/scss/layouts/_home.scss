@@ -1,0 +1,31 @@
+.home-body {
+  @include flex;
+
+  .container {
+    $parent-radius: 1.6rem;
+    $parent-padding: 1rem;
+
+    padding: $parent-padding;
+    background-color: mixcolor($black, $white, 10%);
+    border-radius: $parent-radius;
+    box-shadow: 2px 3px 10px rgba($black, 0.1);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    .link {
+      font-size: 1.3rem;
+      background-color: mixcolor($white, $blue, 70%);
+      border-radius: $parent-radius - $parent-padding;
+      padding: 1rem;
+      transition: background-color .5s;
+      text-align: center;
+
+      &:hover {
+        background-color: mixcolor($white, $blue, 60%);
+      }
+    }
+  }
+}
