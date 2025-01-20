@@ -1,0 +1,95 @@
+:root {
+  --title-color: #333;
+  --text-color: #555;
+  --background-color: #f4f4f4;
+  --container-color: #ccc;
+}
+
+.theme-switcher-body {
+  background-color: var(--background-color);
+  padding-inline: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  form {
+    width: fit-content;
+    margin-inline: auto;
+    
+    fieldset {
+      padding: 1rem 1.5rem;
+      border-radius: 0 0 .8rem .8rem;
+      @include flex;
+      gap: 2rem;
+      background: white;
+
+      input[type="radio"] {
+        appearance: none;
+        width: 1.2rem;
+        height: 1.2rem;
+        outline: 3px solid var(--outline-color, currentColor);
+        border-radius: 50%;
+        outline-offset: 3px;
+        cursor: pointer;
+        &:checked {
+          background: var(--outline-color, currentColor);
+        }
+        &#green {
+          --outline-color: #54ce08;
+        }
+        &#blue {
+          --outline-color: #44acf1;
+        }
+        &#pink {
+          --outline-color: #ff7ff4;
+        }
+      }
+    }
+  }
+
+  .invisible {
+    display: none;
+  }
+}
+
+h1 {
+  color: var(--title-color);
+}
+
+p {
+  color: var(--text-color);
+}
+
+.container {
+  background-color: var(--container-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  @include flex;
+  gap: 1rem;
+  .card {
+    @include flex(start, start, column);
+    gap: .5rem;
+    background-color: var(--background-color);
+    padding: .5rem;
+    border-radius: .5rem;
+  }
+}
+
+:root:has(#green:checked) {
+  --title-color: #1c2b1a;
+  --text-color: #506a57;
+  --background-color: #ccffb3;
+  --container-color: #30583a;
+}
+:root:has(#blue:checked) {
+  --title-color: #28314b;
+  --text-color: #7270c0;
+  --background-color: #b2d5f6;
+  --container-color: #303d58;
+}
+:root:has(#pink:checked) {
+  --title-color: #5b3a58;
+  --text-color: #99749a;
+  --background-color: #ffcbf6;
+  --container-color: #c048e1;
+}
