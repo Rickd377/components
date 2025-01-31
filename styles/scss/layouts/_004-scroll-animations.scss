@@ -1,0 +1,58 @@
+.scroll-animations-body {
+  background-color: #131316;
+  overflow-x: hidden;
+  > * {
+    color: white;
+  }
+  > h1 {
+    width: fit-content;
+    margin: 1rem auto;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    gap: 2rem;
+
+    .card {
+      background-color: white;
+      color: black;
+      padding: .5rem;
+      border-radius: .5rem;
+
+      &.hidden {
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        filter: blur(5px);
+      }
+
+      &.show {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+      }
+
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transition-delay: (100 * $i) + ms;
+        }
+      }
+    }
+  }
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  > * {
+    color: white;
+  }
+}
+
+.wrapper {
+  @include flex;
+}

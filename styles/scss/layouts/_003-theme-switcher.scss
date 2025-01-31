@@ -12,6 +12,21 @@
   flex-direction: column;
   gap: 2rem;
 
+  .container {
+    background-color: var(--container-color);
+    border-radius: 1rem;
+    padding: 1rem;
+    @include flex;
+    gap: 1rem;
+    .card {
+      @include flex(start, start, column);
+      gap: .5rem;
+      background-color: var(--background-color);
+      padding: .5rem;
+      border-radius: .5rem;
+    }
+  }
+
   form {
     width: fit-content;
     margin-inline: auto;
@@ -50,28 +65,13 @@
   .invisible {
     display: none;
   }
-}
 
-h1 {
-  color: var(--title-color);
-}
-
-p {
-  color: var(--text-color);
-}
-
-.container {
-  background-color: var(--container-color);
-  border-radius: 1rem;
-  padding: 1rem;
-  @include flex;
-  gap: 1rem;
-  .card {
-    @include flex(start, start, column);
-    gap: .5rem;
-    background-color: var(--background-color);
-    padding: .5rem;
-    border-radius: .5rem;
+  h1 {
+    color: var(--title-color);
+  }
+  
+  p {
+    color: var(--text-color);
   }
 }
 
